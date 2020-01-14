@@ -1,0 +1,69 @@
+<html>
+	 <head>
+        <meta content = "text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content = "utf-8" http-equiv="encoding">
+    </head>
+	<body id = "my super body">
+        <script>
+			let body = document.getElementById("my super body");
+			let table = document.createElement("table");
+			table.align = "center";
+			body.appendChild(table);
+
+			const num_rows = 20;
+			const num_cols = 20;
+            let isStopped = 0;
+
+			function makeCell(i, j){
+				let td = document.createElement("td");
+                td.onclick = (event) => {
+                    isStopped = !isStopped;
+                };
+                td.setAttribute("id", i + "_" + j);
+                td.style.backgroundColor = "black";
+                td.style.width = "30px";
+                td.style.height = "30px";
+                return td;
+			}
+
+			for (let i = 0; i < num_rows; ++i) {
+                let tr = document.createElement("tr");
+                for (let j = 0; j < num_cols; ++j) {
+                    tr.appendChild(makeCell(i, j));
+                }
+                table.appendChild(tr);
+            }
+        </script>
+
+        <script src="life.js"></script>
+        
+        <script>
+            let game = new GameOfLife(num_rows, num_cols);
+            game.initializeGlider();
+ 
+     
+            function drawCell(alive, i, j) {
+                let cell = document.getElementById(i + "_" + j);
+                cell.style.backgroundColor = alive ? "white" : "black";
+            }
+
+            function Update() {
+                if(!isStopped){
+                    for (let row_id = 0; row_id < num_rows; ++row_id) {
+                        for (let column_id = 0; column_id < num_cols; ++column_id) {
+                            const alive = game.isAlive(row_id, column_id);
+                            drawCell(alive, row_id, column_id);
+                        }
+                    }
+                    game.doStep(num_rows, num_cols);
+                }
+            }
+            setInterval(Update, 100);
+        </script>
+    </body>
+</html>
+
+
+
+
+
