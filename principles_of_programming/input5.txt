@@ -1,0 +1,14 @@
+5
+ji->
+copp->pp
+pp->c
+bc->
+as->.dz
+
+abcbcjioppsdz
+abcbcoppsdz
+abcbppsdz
+abcbcsdz
+abcsdz
+asdz
+dzdz

@@ -1,0 +1,12 @@
+3
+bbbb->.
+a->z
+zz->bb
+ababaabab
+
+
+
+
+
+
+
