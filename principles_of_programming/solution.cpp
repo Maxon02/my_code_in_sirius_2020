@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream> wrong code, right code will be in the evening
 #include <vector>
 #include <string>
 #include <fstream>
@@ -115,4 +115,4 @@ int main() {
             print_verdict(i, "Wrong answer");
     }
     return 0;
-}
+}*/
